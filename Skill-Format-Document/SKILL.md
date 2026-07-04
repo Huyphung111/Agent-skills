@@ -16,15 +16,16 @@ Nguyên tắc bao trùm: **mọi chữ trong văn bản đều màu đen**, khô
 | Văn bản thân bài (nội dung thường) | Times New Roman | 13 | Đều hai bên (Justify) | Đứng, thường | Multiple, tại 1.3 | 3pt / 3pt |
 | Mục trước Chương 1 (Mục Lục, Danh mục bảng, Danh mục hình, Lời cảm ơn, Mở đầu, Bảng phân công công việc, v.v.) | Times New Roman | 18 | Giữa | Đứng, có thể đậm nếu là tiêu đề mục lớn | Multiple, tại 1.3 | theo mặc định, không ghi đè trừ khi có yêu cầu |
 | Tiêu đề mở đầu chương ("Chương 1 ...", "Chương 2 ...") | Times New Roman | 18 | Giữa | Đứng | Multiple, tại 1.3 | như trên |
-| Heading mục trong chương (1, 1.1, 1.1.1, 1.1.1.1...) | Times New Roman | 13 | Trái | Xem mục 2 (đậm, chữ hoa, in nghiêng theo cấp) | Multiple, tại 1.3 | như văn bản thân bài trừ khi có yêu cầu khác |
+| Heading mục trong chương (1, 1.1, 1.1.1, 1.1.1.1...) | Times New Roman | 13 | Trái | Xem mục 2 (đậm, chỉ viết hoa chữ đầu câu, in nghiêng theo cấp) | Multiple, tại 1.3 | như văn bản thân bài trừ khi có yêu cầu khác |
 | Chú thích ảnh (label ảnh) | Times New Roman | 13 | Theo vị trí ảnh (thường giữa) | In nghiêng, **không đậm**, chữ thường (không viết hoa) | Multiple, tại 1.3 | như văn bản thân bài |
 | Nội dung trong bảng | Times New Roman | 13 | Theo cột | Đứng | — | After = 6pt nếu các dòng dính sát nhau, xem mục 3 |
 | Hàng tiêu đề bảng (tên cột) | Times New Roman | 13 | Theo cột | **Đậm** | — | như trên |
 
-## 2. Heading — phân cấp, chữ hoa, đậm/nghiêng
+## 2. Heading — phân cấp, chữ hoa/thường, đậm/nghiêng
 
 - Đánh số phân cấp luôn dùng **số Ả Rập**: **Mức 1 = "1."**, **Mức 2 = "1.1"**, **Mức 3 = "1.1.1"**, **Mức 4 (nếu có) = "1.1.1.1"**. Heading trong chương không dùng số La Mã — số La Mã chỉ dùng để đánh số trang phần trước Chương 1 (xem mục 7), hai việc này tách biệt nhau.
-- Toàn bộ heading có đánh số (mọi mức) đều: Times New Roman, size 13, **chữ hoa (viết hoa toàn bộ)**, **đậm**.
+- Toàn bộ heading có đánh số (mọi mức) đều: Times New Roman, size 13, **đậm**.
+- **Chữ hoa/thường:** không viết hoa toàn bộ heading. Chỉ viết hoa **chữ cái đầu tiên của toàn câu**, phần còn lại viết thường bình thường — giống văn phong câu văn (sentence case), không phải viết hoa từng chữ đầu mỗi từ. Ví dụ: `1. Giới thiệu đề tài`, `1.1 Mục tiêu nghiên cứu`, `1.1.1 Phạm vi nghiên cứu`.
 - Từ mức 2 trở đi (1.1, 1.1.1, 1.1.1.1, ...): thêm **in nghiêng**. Mức 1 ("1.") giữ **đứng thẳng**, không nghiêng.
 - **Luôn kiểm tra tính liên tục của số thứ tự** trước khi giao file: liệt kê toàn bộ heading theo đúng thứ tự xuất hiện trong văn bản và xác nhận không bị nhảy số (ví dụ 1.1 → 1.2 → tự nhiên nhảy lên 1.4 là sai), không bị trùng số, không bị lệch cấp (mục con phải nằm dưới đúng mục cha). Đây là bước dễ bị bỏ sót khi chỉnh sửa nhiều heading cùng lúc nên phải rà lại toàn bộ danh sách, không chỉ sửa chỗ được yêu cầu.
 - Nên dùng multilevel list gắn với Heading style của Word (Heading 1/2/3) để số tự cập nhật và mục lục lấy đúng — tránh gõ tay số thứ tự nếu có thể, vì gõ tay dễ gây ra đúng lỗi nhảy số ở trên.
@@ -81,7 +82,6 @@ Dùng bảng này khi chỉnh `word/document.xml` (theo hướng dẫn của ski
 | After 3pt | `w:after="60"` | `spacing: { after: 60 }` |
 | After 6pt (dòng trong bảng) | `w:after="120"` | `spacing: { after: 120 }` |
 | First line indent 1.27cm | `<w:ind w:firstLine="720"/>` | `indent: { firstLine: 720 }` |
-| Chữ hoa toàn bộ (giữ nguyên text gốc) | `<w:caps/>` | `allCaps: true` |
 | Đậm | `<w:b/>` | `bold: true` |
 | Nghiêng | `<w:i/>` | `italics: true` |
 | Màu đen tường minh | `<w:color w:val="000000"/>` | `color: "000000"` |
@@ -101,7 +101,7 @@ Ghi chú: `w:sz`/`size` tính theo **half-point** (13pt → 26, 18pt → 36) —
 
 - [ ] Văn bản thân bài: TNR 13, line spacing 1.3, before/after 3pt, thụt lề đầu dòng 1.27cm ở các đoạn xuống hàng.
 - [ ] Các mục trước Chương 1 và tiêu đề chương: TNR 18, căn giữa.
-- [ ] Heading theo cấp: TNR 13, chữ hoa, đậm; mức ≥2 có thêm nghiêng; mức 1 đứng thẳng.
+- [ ] Heading theo cấp: TNR 13, đậm, chỉ viết hoa chữ cái đầu câu (không viết hoa toàn bộ); mức ≥2 có thêm nghiêng; mức 1 đứng thẳng.
 - [ ] Số thứ tự heading liên tục, đúng cấp, không nhảy số, không trùng.
 - [ ] Bảng: dòng không bị dính, đã set after 6pt nếu cần; không tô màu nền; hàng tiêu đề/tên cột đã in đậm.
 - [ ] Ảnh: có chú thích, chú thích chữ thường, nghiêng, không đậm.
